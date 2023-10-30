@@ -34,7 +34,7 @@ I'm a data enthusiast with a strong passion for machine learning and artificial 
 Feel free to reach out to me:
 * Email: malumbea@gmail.com
 * LinkedIn: [AnthonyML](https://www.linkedin.com/in/anthonyml/)
-* Twitter: [@AnthonyML](https://twitter.com/AnthonyML)
+* Twitter: 
 
 ## Acknowledgments
 
