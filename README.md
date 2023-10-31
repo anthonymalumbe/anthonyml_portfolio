@@ -4,7 +4,7 @@ Welcome to my machine learning portfolio! Here you'll find a collection of proje
 
 Feel free to explore my work and reach out if you have any questions or suggestions.
 
-## Projects
+## Projects TO BE UPDATED
 
 ### 1. [Project Name](link-to-project-repo)
 * Description: A brief description of the project and its goals.
