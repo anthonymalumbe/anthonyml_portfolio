@@ -1,4 +1,4 @@
-# Data and AI Portfolio With The Support from KaggleX
+# Data and AI Portfolio
 
 Welcome to my machine learning portfolio! Here you'll find a collection of projects, notebooks, and code related to various machine learning and data science topics. I'm passionate about leveraging data to solve real-world problems and explore exciting challenges in the field of artificial intelligence.
 
