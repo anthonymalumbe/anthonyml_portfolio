@@ -68,3 +68,9 @@ The above script performs the following steps:
 4. Uploads notebook result (with all the cells pre-computed) to Cloud Storage bucket in this case: ```gs://my-bucket/```
 5. Papermill emits a save after each cell executes, this could generate “429 Too Many Requests” [errors](https://github.com/nteract/papermill/issues/312), which are handled by the library itself.
 6. Terminates the Compute Engine instance
+
+
+Reference :
+-----------
+1. [Let Deep Learning VMs and Jupyter notebooks burn the midnight oil for you: robust and automated training with Papermill](https://cloud.google.com/blog/products/ai-machine-learning/let-deep-learning-vms-and-jupyter-notebooks-to-burn-the-midnight-oil-for-you-robust-and-automated-training-with-papermill)
+2. [How to use Jupyter on a Google Cloud VM](https://towardsdatascience.com/how-to-use-jupyter-on-a-google-cloud-vm-5ba1b473f4c2)
