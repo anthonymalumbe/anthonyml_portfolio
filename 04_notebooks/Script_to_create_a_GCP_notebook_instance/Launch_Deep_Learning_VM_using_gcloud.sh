@@ -1,7 +1,10 @@
+#!/bin/bash
+
 IMAGE=--image-family=tf-latest-cpu
 INSTANCE_NAME=dlvm
 GCP_LOGIN_NAME=google-cloud-customer@gmail.com  # CHANGE THIS
-STARTUP_SCRIPT="git clone https://github.com/GoogleCloudPlatform/data-science-on-gcp"
+
+gcloud config set compute/zone us-central1-a  # CHANGE THIS
 
 echo "Launching $INSTANCE_NAME"
 gcloud compute instances create ${INSTANCE_NAME} \
