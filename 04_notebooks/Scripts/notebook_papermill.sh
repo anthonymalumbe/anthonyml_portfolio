@@ -12,7 +12,7 @@ INSTANCE_TYPE="n1-standard-4"  #CHANGE
 GCS_INPUT_NOTEBOOK="gs://my-bucket/input.ipynb"
 GCS_OUTPUT_NOTEBOOK="gs://my-bucket/output.ipynb"
 GCS_INPUT_PARAMS="gs://my-bucket/params.yaml" # Optional
-export STARTUP_SCRIPT="https://raw.githubusercontent.com/GoogleCloudPlatform/ml-on-gcp/master/dlvm/tools/scripts/notebook_executor.sh"
+export STARTUP_SCRIPT="https://raw.githubusercontent.com/anthonymalumbe/anthonyml_portfolio/main/04_notebooks/scripts/notebook_executor.sh"
 
 gcloud compute instances create $INSTANCE_NAME \
         --zone=$ZONE \
