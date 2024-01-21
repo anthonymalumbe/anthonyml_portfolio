@@ -11,7 +11,7 @@ The ```execute a_notebook_using_CPU_resources.sh``` and ```execute a_notebook_us
 
 And there you have it! You’ll no longer pay for resources you don’t use since after execution completes, your notebook, with populated cells, is uploaded to the specified Cloud Storage bucket. You can read more about it in the [Cloud Storage documentation](https://cloud.google.com/storage/docs/creating-buckets#storage-create-bucket-gsutil).
 
-## Note: 
+## Note 1: 
 In case you are not using a Deep Learning VM, and you want to install Papermill library with Cloud Storage support, you only need to run: 
 
 ```pip install papermill[gcs]```
@@ -22,13 +22,13 @@ The submission process will look like this:
 ```
 execute_notebook_with_gpu gs://my-bucket/input.ipynb gs://my-bucket/output.ipynb t4 4
 ```
-## Note: 
+## Note 2: 
 Verify that you have enough CPU or GPU resources available by checking your quota in the zone where your instance will be deployed.
 
 
 This ```executing_a_Jupyter_notebook.sh``` is the standard way to create a Deep Learning VM. But keep in mind, you’ll need to pick the VM that includes the core dependencies you need to execute your notebook. Do not try to use a TensorFlow image if your notebook needs PyTorch or vice versa.
 
-## Note: 
+## Note 3: 
 if you do not see a dependency that is required for your notebook and you think should be in the image, please let us know on the forum (or with a comment to this article).
 
 ### The secret sauce here contains two following things:
@@ -43,7 +43,7 @@ Papermill is a tool for parameterising, executing, and analysing Jupyter Noteboo
 3. Summarise collections of notebooks
 
 ### Behind the scenes
-
+---------------------
 Let’s start with the startup shell script parameters:
 
 ```INPUT_NOTEBOOK_PATH```: The input notebook located Cloud Storage bucket.
@@ -70,7 +70,7 @@ The above script performs the following steps:
 6. Terminates the Compute Engine instance
 
 
-Reference :
------------
+### Reference :
+---------------
 1. [Let Deep Learning VMs and Jupyter notebooks burn the midnight oil for you: robust and automated training with Papermill](https://cloud.google.com/blog/products/ai-machine-learning/let-deep-learning-vms-and-jupyter-notebooks-to-burn-the-midnight-oil-for-you-robust-and-automated-training-with-papermill)
 2. [How to use Jupyter on a Google Cloud VM](https://towardsdatascience.com/how-to-use-jupyter-on-a-google-cloud-vm-5ba1b473f4c2)
