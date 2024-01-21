@@ -2,7 +2,20 @@
 
 **Papermill will help you automate the execution of yourJupyter notebooks and in combination of Cloud Storage and Deep Learning VM images you can now set up this process in a very simple and cost efficient way.**
 
+The ```execute a_notebook_using_CPU_resources.sh``` and ```execute a_notebook_using_GPU_resources.sh``` do the following:
+1. Create a Compute Engine instance using TensorFlow Deep Learning VM and 2 NVIDIA Tesla T4 GPUs
+2. Install the latest CPU or NVIDIA GPU drivers
+3. Execute the notebook using Papermill
+4. Upload notebook result (with all the cells pre-computed) to Cloud Storage bucket in this case: “gs://my-bucket/”
+5. Terminate the Compute Engine instance
+
+And there you have it! You’ll no longer pay for resources you don’t use since after execution completes, your notebook, with populated cells, is uploaded to the specified Cloud Storage bucket. You can read more about it in the [Cloud Storage documentation](https://cloud.google.com/storage/docs/creating-buckets#storage-create-bucket-gsutil).
+
+## Note: 
+In case you are not using a Deep Learning VM, and you want to install Papermill library with Cloud Storage support, you only need to run: ```pip install papermill[gcs]```
+
 The Deep Learning VM instance requires several permissions: read and write ability to Cloud Storage, and the ability to delete instances on Compute Engine. That is why the original command has the scope “https://www.googleapis.com/auth/cloud-platform” defined.
+
 The submission process will look like this:
 ```
 execute_notebook_with_gpu gs://my-bucket/input.ipynb gs://my-bucket/output.ipynb t4 4
