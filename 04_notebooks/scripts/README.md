@@ -10,7 +10,6 @@ The ```execute a_notebook_using_CPU_resources.sh``` and ```execute a_notebook_us
 5. Terminate the Compute Engine instance
 
 And there you have it! You’ll no longer pay for resources you don’t use since after execution completes, your notebook, with populated cells, is uploaded to the specified Cloud Storage bucket. You can read more about it in the [Cloud Storage documentation](https://cloud.google.com/storage/docs/creating-buckets#storage-create-bucket-gsutil).
-
 ## Note 1: 
 In case you are not using a Deep Learning VM, and you want to install Papermill library with Cloud Storage support, you only need to run: 
 
@@ -25,17 +24,14 @@ execute_notebook_with_gpu gs://my-bucket/input.ipynb gs://my-bucket/output.ipynb
 ## Note 2: 
 Verify that you have enough CPU or GPU resources available by checking your quota in the zone where your instance will be deployed.
 
-
 This ```executing_a_Jupyter_notebook.sh``` is the standard way to create a Deep Learning VM. But keep in mind, you’ll need to pick the VM that includes the core dependencies you need to execute your notebook. Do not try to use a TensorFlow image if your notebook needs PyTorch or vice versa.
-
 ## Note 3: 
 if you do not see a dependency that is required for your notebook and you think should be in the image, please let us know on the forum (or with a comment to this article).
 
-### The secret sauce here contains two following things:
-
-[Startup shell script](https://raw.githubusercontent.com/GoogleCloudPlatform/ml-on-gcp/master/dlvm/tools/scripts/notebook_executor.sh)
-
-[Papermill library](https://papermill.readthedocs.io/en/latest/)
+The secret sauce here contains two following things:
+----------------------------------------------------
+1. [Startup shell script](https://raw.githubusercontent.com/GoogleCloudPlatform/ml-on-gcp/master/dlvm/tools/scripts/notebook_executor.sh)
+2. [Papermill library](https://papermill.readthedocs.io/en/latest/)
 
 Papermill is a tool for parameterising, executing, and analysing Jupyter Notebooks. Papermill lets you:
 1. Parameterise notebooks via command line arguments or a parameter file in YAML format
