@@ -12,7 +12,7 @@ This executing_a_Jupyter_notebook.sh is the standard way to create a Deep Learni
 ## Note: 
 if you do not see a dependency that is required for your notebook and you think should be in the image, please let us know on the forum (or with a comment to this article).
 
-###The secret sauce here contains two following things:
+### The secret sauce here contains two following things:
 
 [Papermill library](https://papermill.readthedocs.io/en/latest/)
 
