@@ -1,3 +1,5 @@
+**By using the [Deep Learning VM images](https://cloud.google.com/deep-learning-vm/), you can automate your notebook training, such that you no longer need to pay extra or manually manage your Cloud infrastructure. Take advantage of all the pre-installed ML software and Nteract’s Papermill project to help you solve your ML problems more quickly! Papermill will help you automate the execution of yourJupyter notebooks and in combination of Cloud Storage and Deep Learning VM images you can now set up this process in a very simple and cost efficient way.**
+
 The Deep Learning VM instance requires several permissions: read and write ability to Cloud Storage, and the ability to delete instances on Compute Engine. That is why the original command has the scope “https://www.googleapis.com/auth/cloud-platform” defined.
 The submission process will look like this:
 ```
