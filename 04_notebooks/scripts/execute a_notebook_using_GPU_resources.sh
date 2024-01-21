@@ -17,6 +17,7 @@ function execute_notebook_with_gpu() {
         --accelerator="type=nvidia-tesla-${GPU_TYPE},count=${GPU_COUNT}" \
         --machine-type=$INSTANCE_TYPE \
         --boot-disk-size=100GB \
-        --scopes=https://www.googleapis.com/auth/cloud-platform \           --metadata="install-nvidia-driver=True,startup-script=${STARTUP_SCRIPT}"
+        --scopes=https://www.googleapis.com/auth/cloud-platform \           
+        --metadata="install-nvidia-driver=True,startup-script=${STARTUP_SCRIPT}"
     gcloud --quiet compute instances delete $INSTANCE_NAME --zone $ZONE
 }
