@@ -22,3 +22,30 @@ Papermill is a tool for parameterising, executing, and analysing Jupyter Noteboo
 1. Parameterise notebooks via command line arguments or a parameter file in YAML format
 2. Execute and collect metrics across the notebooks
 3. Summarise collections of notebooks
+
+### Behind the scenes
+
+Let’s start with the startup shell script parameters:
+
+```INPUT_NOTEBOOK_PATH```: The input notebook located Cloud Storage bucket.
+Example: ```gs://my-bucket/input.ipynb```
+
+```OUTPUT_NOTEBOOK_PATH```: The output notebook located Cloud Storage bucket.
+Example: ```gs://my-bucket/input.ipynb```
+
+```PARAMETERS_FILE```: Users can provide a YAML file where notebook parameter values should be read.
+Example: ```gs://my-bucket/params.yaml```
+
+```PARAMETERS```: Pass parameters via -p key value for notebook execution.
+Example: ```-p batch_size 128 -p epochs 40```
+
+The two ways to execute the notebook with parameters are: (1) through the Python API and (2) through the command line interface. This sample script supports two different ways to pass parameters to Jupyter notebook, although Papermill supports other formats, so please consult Papermill’s documentation.
+
+The above script performs the following steps:
+
+1. Creates a Compute Engine instance using the TensorFlow Deep Learning VM and 2 NVIDIA Tesla T4 GPUs
+2. Installs NVIDIA GPU drivers
+3. Executes the notebook using Papermill tool
+4. Uploads notebook result (with all the cells pre-computed) to Cloud Storage bucket in this case: ```gs://my-bucket/```
+5. Papermill emits a save after each cell executes, this could generate “429 Too Many Requests” [errors](https://github.com/nteract/papermill/issues/312), which are handled by the library itself.
+6. Terminates the Compute Engine instance
