@@ -12,7 +12,9 @@ The ```execute a_notebook_using_CPU_resources.sh``` and ```execute a_notebook_us
 And there you have it! You’ll no longer pay for resources you don’t use since after execution completes, your notebook, with populated cells, is uploaded to the specified Cloud Storage bucket. You can read more about it in the [Cloud Storage documentation](https://cloud.google.com/storage/docs/creating-buckets#storage-create-bucket-gsutil).
 
 ## Note: 
-In case you are not using a Deep Learning VM, and you want to install Papermill library with Cloud Storage support, you only need to run: ```pip install papermill[gcs]```
+In case you are not using a Deep Learning VM, and you want to install Papermill library with Cloud Storage support, you only need to run: 
+
+```pip install papermill[gcs]```
 
 The Deep Learning VM instance requires several permissions: read and write ability to Cloud Storage, and the ability to delete instances on Compute Engine. That is why the original command has the scope “https://www.googleapis.com/auth/cloud-platform” defined.
 
